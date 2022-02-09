@@ -10,6 +10,7 @@ My repository project is about the work done each week in RStudio for Spring 202
   * data
   * scripts
   * output
-<<<<<<< HEAD
-  
-  week_2
+* Weel_2
+  * data
+  * scripts
+  * output
