@@ -18,5 +18,4 @@ ggplot(data = penguins,
                         y = "Bill Lenth (mm)") + 
   scale_color_viridis_d() +
   theme_grey()
-                        
                      

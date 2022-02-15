@@ -24,9 +24,7 @@ ggplot(data=penguins,
                           panel.background = element_rect(fill = "linen"), 
                           panel.border = element-rect(color = "green"))
 
-ggsave(here("week_4","output","penguin.png"), 
+ggsave(here("week_3","output","penguin.png"), 
 width = 7, height = 5)
-
-
 
   
