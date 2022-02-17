@@ -25,7 +25,7 @@ penguins %>%
  drop_na(species, sex, island)
 
 ### part 2 ###
-penguins %>% 
+plot <- penguins %>% 
   filter(sex != "male") %>%
   mutate(log_mass = log(body_mass_g)) %>%
   select(species, sex, island, log_mass) %>%
@@ -39,6 +39,7 @@ penguins %>%
              caption = "Source: Palmer Station LTER / palmerpenguins packages")+ 
   scale_fill_manual(values = beyonce_palette(5))
 
+ggsave(here('week_4/output',"Box_plot.png"), plot)
 
 
   

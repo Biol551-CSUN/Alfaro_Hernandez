@@ -1,7 +1,7 @@
 ################################################
 ### Today we are going to plot penguin data ###
 ### Created by: Margarita Alfaro ###
-### Uptated on: 2022-02-15 ###
+### Uptate on: 2022-02-15 ###
 ###################################
 
 #### load libraries #######
@@ -27,8 +27,8 @@ filter(.data = penguins,
 data2<-mutate(.data = penguins, 
               body_mass_kg =body_mass_g/1000,
               bill_length_depth = bill_length_mm/bill_depth_mm)
-# to view data
-view(data2)
+
+view(data2) #to view data
 
 data2<-mutate(.data =penguins, 
               after_2008 = ifelse(year>2008,
