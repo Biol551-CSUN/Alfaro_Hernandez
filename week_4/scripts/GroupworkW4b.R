@@ -52,4 +52,6 @@ ChemData2 %>%
  
 View(ChemData2)
 
+ggsave(here("week_4", "output", "plot4b.png"))
+
 
