@@ -7,6 +7,7 @@
 ### load libraries ###
 library(tidyverse)
 library(here)
+library(viridis)
         
 ChemData<-read_csv(here("week_4","data","chemicaldata_maunalua.csv"))
 View(ChemData)
@@ -44,7 +45,7 @@ View(ChemData1)
 ChemData2 %>% 
   ggplot(aes(x = Variables, 
              y = log10(Param_means +1), color= Time))+
-  geom_area()+
+  geom_point()+
   ggtitle("Temperature Data")+
   theme(plot.title= element_text(hjust = 0.5))
   labs(x= "Variables", y= "log of mean Parameter")+
