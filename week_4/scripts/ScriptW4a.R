@@ -70,6 +70,6 @@ penguins %>% # to remove NAs
 
 penguins %>%
   drop_na(sex) %>%
-  ggplot(aes(x =sex, # pipe into a ggplot
+  ggplot(aes(x =sex, # pipe into a ggplott
              y = flipper_length_mm)) + geom_boxplot()
 
