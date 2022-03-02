@@ -19,7 +19,7 @@ My repository project is about the work done each week in RStudio for Spring 202
     * [weightdata.csv](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_2/data)
     
 
-* [#### **Week_3**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/Week_3)
+* #### [**Week_3**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/Week_3)
   * scripts
     * [ggplot](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/Week_3/scripts/ggplot.R)
     * [penguin data plot](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/Week_3/WEEK_3/output/penguin.png)
@@ -28,7 +28,7 @@ My repository project is about the work done each week in RStudio for Spring 202
   * data (NA)
 
 
-* [####**Week_4**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_4)
+* ####[**Week_4**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_4)
   * scripts
     *
   * output
