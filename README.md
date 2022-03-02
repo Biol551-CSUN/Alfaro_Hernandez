@@ -13,7 +13,7 @@ My repository project is about the work done each week in RStudio for Spring 202
     *
   * data
     *
-* [Week_2] (https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_2)
+* [Visit week_2](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_2)
   * scripts
     *
   * output
