@@ -55,11 +55,10 @@ My repository project is about the work done each week in RStudio for Spring 202
 
 * #### [**_Week_6_**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_6/scripts)
   * Scripts
-    *
-  * Output
-    *
-  * Data
-    *
+    * [My awesome RMarkdown Script](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_6/scripts/W6a.html)
+* [Link RMarkdown Doc wth Palmer Penguins](file:///Users/margaritaalfaro/Desktop/Repositores/Alfaro_Hernandez/week_6/scripts/Week_6.html)
+
+    
     
     
     
