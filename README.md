@@ -90,7 +90,7 @@ My repository project is about the work done each week in RStudio for Spring 202
 
 **_Helpful_links_**
  * To_use_with_Markdown
-    *[Markdown_guides](https://www.markdownguide.org/basic-syntax/)
     * [Free_online_tutorials](https://www.markdowntutorial.com/)
     * [Free_online_markdown_editor](https://dillinger.io/)
+    *[Markdown_guides](https://www.markdownguide.org/basic-syntax/)
     
