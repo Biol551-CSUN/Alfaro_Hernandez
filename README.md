@@ -92,7 +92,7 @@ My repository project is about the work done each week in RStudio for Spring 202
  * To_use_with_Markdown
     * [Markdown guides](https://www.markdownguide.org/basic-syntax/)
     * [Free online tutorials](https://www.markdowntutorial.com/)
-    * [Free_online_markdown_editor](https://dillinger.io/)
+    * [Free online markdown editor](https://dillinger.io/)
  * Tidytuesday    
     * [Link](https://github.com/rfordatascience/tidytuesday)
     
