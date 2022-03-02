@@ -6,6 +6,14 @@
 
 My repository project is about the work done each week in RStudio for Spring 2022, which is going to include folders, sub-folders and corresponding links. The following is an example how the consecutive following weeks will look like. 
 
+* #### **_Links for Lectures_**
+  * Week_1
+  * Week_2
+  * Week_3
+  * Week_4
+  * Week_5
+  * Week_6
+
 * #### **_Week_1_**
   * Scripts
   * Output
@@ -46,7 +54,9 @@ My repository project is about the work done each week in RStudio for Spring 202
 
 * #### [**_Week_5_**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_5)
   * Scripts
-    *
+    * [5_a](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/scripts/5a.R)
+    * [5_b](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/scripts/5b.R)
+    * [Group work 5b](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/scripts/Groupwork5b.R)
   * Output
     *
   * Data
