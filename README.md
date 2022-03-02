@@ -88,7 +88,7 @@ My repository project is about the work done each week in RStudio for Spring 202
     * [RMarkdown Doc wth Palmer Penguins](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_6/scripts/week_6.Rmd)
 
 
-**_Helpful_links_**
+## **_Helpful_links_**
  * To_use_with_Markdown
     * [Markdown_guides](https://www.markdownguide.org/basic-syntax/)
     * [Free_online_tutorials](https://www.markdowntutorial.com/)
