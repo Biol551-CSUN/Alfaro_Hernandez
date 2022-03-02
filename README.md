@@ -6,7 +6,7 @@
 
 My repository project is about the work done each week in RStudio for Spring 2022, which is going to include folders, sub-folders and corresponding links. The following is an example how the consecutive following weeks will look like. 
 
-### **_Links for Lectures_**
+## **_Links for Lectures_**
   * [Week_1](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_1)
     * Intro_to_R
     * What_is_Data
@@ -28,7 +28,7 @@ My repository project is about the work done each week in RStudio for Spring 202
 
 
 
-### **Classwork**
+## **_Classwork_**
 * #### **_Week_1_**
   * Scripts
   * Output
@@ -87,5 +87,10 @@ My repository project is about the work done each week in RStudio for Spring 202
     * [My awesome RMarkdown Doc](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_6/scripts/w6a.Rmd)
     * [RMarkdown Doc wth Palmer Penguins](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_6/scripts/week_6.Rmd)
 
-    
+
+**_Helpful_links_**
+ * To_use_with_Markdown
+    *[Markdown_guides](https://www.markdownguide.org/basic-syntax/)
+    * [Free_online_tutorials](https://www.markdowntutorial.com/)
+    * [Free_online_markdown_editor](https://dillinger.io/)
     
