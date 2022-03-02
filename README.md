@@ -35,12 +35,13 @@ My repository project is about the work done each week in RStudio for Spring 202
     * [week_4 part "b"](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_4/scripts/ScriptW4b.R)
     * [Group work part "b"](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_4/scripts/GroupworkW4b.R)
   * Output
-    * [Box_plot](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_4/output/Box_plot.png)
+    * [Box_plot.png](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_4/output/Box_plot.png)
     * [summary.csv](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_4/output/summary.csv)
     * [Lab work part "b"](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_4/output/LabW4b.csv)
-    * 
+    * [plot4"b".png](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_4/output/plot4b.png)
   * Data
-    *
+    * [chem_data_dictionary.csv](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_4/data/chem_data_dictionary.csv)
+    * [chemicaldata_maunalua.csv](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_4/data/chemicaldata_maunalua.csv)
   
 
 * #### [**_Week_5_**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_5)
