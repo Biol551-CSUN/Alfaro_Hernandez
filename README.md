@@ -19,7 +19,7 @@ My repository project is about the work done each week in RStudio for Spring 202
     * Intro_to_Plotting_part_2
   * [Week_4](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_4)
     * Data_Wrangling_**_"dplyr"_**
-    * Data_Wrangling_**_"tidyr_"**
+    * Data_Wrangling_**_"tidyr"_**
   * [Week_5](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_5)
     * Data_Wrangling_**_"Joins"_**
     * Data_Wrangling_**_"Lubridate_dates_and_times"_**
