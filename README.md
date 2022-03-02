@@ -6,7 +6,7 @@
 
 My repository project is about the work done each week in RStudio for Spring 2022, which is going to include folders, sub-folders and corresponding links. The following is an example how the consecutive following weeks will look like. 
 
-* #### Week_1
+* #### **_Week_1_**
   * scripts
   * output
   * data
@@ -19,7 +19,7 @@ My repository project is about the work done each week in RStudio for Spring 202
     * [weightdata.csv](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_2/data)
     
 
-* #### [**Week_3**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/Week_3)
+* #### [**_Week_3_**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/Week_3)
   * scripts
     * [ggplot](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/Week_3/scripts/ggplot.R)
     * [penguin data plot](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/Week_3/WEEK_3/output/penguin.png)
@@ -28,7 +28,7 @@ My repository project is about the work done each week in RStudio for Spring 202
   * data (NA)
 
 
-* #### [**Week_4**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_4)
+* #### [**_Week_4_**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_4)
   * scripts
     *
   * output
@@ -37,7 +37,7 @@ My repository project is about the work done each week in RStudio for Spring 202
     *
   
 
-* #### [**Week_5**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_5)
+* #### [**_Week_5_**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_5)
   * scripts
     *
   * output
@@ -46,7 +46,7 @@ My repository project is about the work done each week in RStudio for Spring 202
     *
     
 
-* #### [**Week_6**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_6/scripts)
+* #### [**_Week_6_**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_6/scripts)
   * scripts
     *
   * output
