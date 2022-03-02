@@ -8,10 +8,12 @@ My repository project is about the work done each week in RStudio for Spring 202
 
 * #### **_Links for Lectures_**
   * [Week_1](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_1)
-    * [1_Lab_Rintro](file:///Users/margaritaalfaro/Desktop/Repositores/Spring-2022/Week_1/1_Lab_Rintro.html#1)
-    * [What_is_Data](file:///Users/margaritaalfaro/Desktop/Repositores/Spring-2022/Week_1/1_What_is_Data.html#1)
-    * [Data_and_Metadata](file:///Users/margaritaalfaro/Desktop/Repositores/Spring-2022/Week_1/2_Collecting_Data_and_metadata.html#1)
+    * Intro_to_R
+    * What_is_Data
+    * Data_and_Metadata
   * [Week_2](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_2)
+    * What_is_Reproducible_Research
+    * Reproducible_Scripts_and_Workflow
   * [Week_3](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_3)
   * [Week_4](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_4)
   * [Week_5](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_5)
