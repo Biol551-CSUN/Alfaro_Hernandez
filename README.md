@@ -56,7 +56,7 @@ My repository project is about the work done each week in RStudio for Spring 202
 * #### [**_Week_6_**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_6/scripts)
   * Scripts
     * [My awesome RMarkdown Doc](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_6/scripts/w6a.Rmd)
-* [RMarkdown Doc wth Palmer Penguins](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_6/scripts/week_6.Rmd)
+    * [RMarkdown Doc wth Palmer Penguins](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_6/scripts/week_6.Rmd)
 
     
     
