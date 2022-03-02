@@ -15,9 +15,16 @@ My repository project is about the work done each week in RStudio for Spring 202
     * What_is_Reproducible_Research
     * Reproducible_Scripts_and_Workflow
   * [Week_3](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_3)
+    * Intro_to_Plotting_part_1
+    * Intro_to_Plotting_part_2
   * [Week_4](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_4)
+    * Data_Wrangling_**_dplyr_**
+    * Data_Wrangling_**tidyr**
   * [Week_5](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_5)
+    * Data_Wrangling_**Joins**
+    * Data_Wrangling_**_Lubridate_dates_and_times_**
   * [Week_6](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_6)
+    * Intro_to_RMarkdown
 
 
 
