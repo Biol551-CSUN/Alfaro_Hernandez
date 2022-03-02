@@ -11,7 +11,7 @@ My repository project is about the work done each week in RStudio for Spring 202
   * output
   * data
 
-* #### [**Week_2**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_2)
+* #### [**_Week_2_**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_2)
   * scripts
     * [Link](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_2/scripts)
   * output (NA)
