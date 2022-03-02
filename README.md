@@ -28,7 +28,7 @@ My repository project is about the work done each week in RStudio for Spring 202
 
 
 
-### **R_STUDIO**
+### **Classwork**
 * #### **_Week_1_**
   * Scripts
   * Output
