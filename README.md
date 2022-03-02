@@ -8,23 +8,23 @@ My repository project is about the work done each week in RStudio for Spring 202
 
 ## **_Links for Lectures_**
   * [Week_1](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_1)
-    * Intro_to_R
-    * What_is_Data
-    * Data_and_Metadata
+    * Intro to R
+    * What is Data
+    * Data and Metadata
   * [Week_2](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_2)
-    * What_is_Reproducible_Research
-    * Reproducible_Scripts_and_Workflow
+    * What is Reproducible Research?
+    * Reproducible Scripts and Workflow
   * [Week_3](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_3)
-    * Intro_to_Plotting_part_1
-    * Intro_to_Plotting_part_2
+    * Intro to Plotting part_1
+    * Intro to Plotting part_2
   * [Week_4](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_4)
-    * Data_Wrangling_**_"dplyr"_**
-    * Data_Wrangling_**_"tidyr"_**
+    * Data Wrangling **_"dplyr"_**
+    * Data Wrangling **_"tidyr"_**
   * [Week_5](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_5)
-    * Data_Wrangling_**_"Joins"_**
-    * Data_Wrangling_**_"Lubridate_dates_and_times"_**
+    * Data Wrangling **_"Joins"_**
+    * Data Wrangling **_"Lubridate_dates_and_times"_**
   * [Week_6](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_6)
-    * Intro_to_RMarkdown
+    * Intro to RMarkdown
 
 
 
@@ -88,10 +88,10 @@ My repository project is about the work done each week in RStudio for Spring 202
     * [RMarkdown Doc wth Palmer Penguins](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_6/scripts/week_6.Rmd)
 
 
-## **_Helpful_links_**
+## **_Helpful links_**
  * To_use_with_Markdown
-    * [Markdown_guides](https://www.markdownguide.org/basic-syntax/)
-    * [Free_online_tutorials](https://www.markdowntutorial.com/)
+    * [Markdown guides](https://www.markdownguide.org/basic-syntax/)
+    * [Free online tutorials](https://www.markdowntutorial.com/)
     * [Free_online_markdown_editor](https://dillinger.io/)
  * Tidytuesday    
     * [Link](https://github.com/rfordatascience/tidytuesday)
