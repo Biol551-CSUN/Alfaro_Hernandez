@@ -58,9 +58,13 @@ My repository project is about the work done each week in RStudio for Spring 202
     * [5_b](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/scripts/5b.R)
     * [Group work 5b](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/scripts/Groupwork5b.R)
   * Output
-    *
+    * [Conductivity_Depth.png](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/output/Conductivity_Depth.png)
   * Data
-    *
+    * [site.characteristics.data.csv](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/data/site.characteristics.data.csv)
+    * [data_dictionary.csv](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/data/data_dictionary.csv)
+    * [Topt_data.csv](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/data/Topt_data.csv)
+    * [DepthData.csv](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/data/DepthData.csv)
+    * [CondData.csv](https://github.com/Biol551-CSUN/Alfaro_Hernandez/blob/main/week_5/data/CondData.csv)
     
 
 * #### [**_Week_6_**](https://github.com/Biol551-CSUN/Alfaro_Hernandez/tree/main/week_6/scripts)
@@ -70,6 +74,3 @@ My repository project is about the work done each week in RStudio for Spring 202
 
     
     
-    
-    
-  
