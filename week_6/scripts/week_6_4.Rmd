@@ -1,0 +1,30 @@
+---
+title: "Tables with kable"
+author: "Margarita Alfaro"
+date: "3/3/2022"
+output: 
+  html_document:
+  toc: TRUE
+  toc_float: TRUE
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+library(kableExtra)
+library(tidyverse)
+library(palmerpenguins)
+```
+
+```{r}
+penguins %>%
+  group_by(species) %>%
+  summarise(billmean = mean(bill_length_mm, na.rm = TRUE)) %>%
+  kbl() %>% 
+  kable_classic()%>%
+  row_spec(2, bold = T, color = "white", background = "red")
+```
+ 
+
