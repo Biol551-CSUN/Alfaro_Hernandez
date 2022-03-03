@@ -24,7 +24,7 @@ My repository project is about the work done each week in RStudio for Spring 202
     * Data Wrangling **_"Joins"_**
     * Data Wrangling **_"Lubridate_dates_and_times"_**
   * [Week_6](https://github.com/Biol551-CSUN/Spring-2022/tree/main/Week_6)
-    * Intro to RMarkdown
+    * Intro to RMarkdown part 1 and 2
 
 
 
