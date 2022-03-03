@@ -94,6 +94,10 @@ My repository project is about the work done each week in RStudio for Spring 202
     * [Free online tutorials](https://www.markdowntutorial.com/)
     * [Free online markdown editor](https://dillinger.io/)
     * [R Markdown Cheat Sheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+    * [R Markdown from R Studio](https://rmarkdown.rstudio.com/)
+    * [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+ * To use with lubridate
+    * [Lubridate Cheat Sheet](https://evoldyn.gitlab.io/evomics-2018/ref-sheets/R_lubridate.pdf)
  * Tidytuesday    
     * [Link](https://github.com/rfordatascience/tidytuesday)
     
