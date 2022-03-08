@@ -1,0 +1,61 @@
+---
+title: "Lab Work Week 6"
+author: "Margarita Alfaro"
+date: "3/3/2022"
+output: 
+  html_document:
+  theme: cosmo  
+  toc: TRUE
+  toc_float: TRUE
+  warning: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.path = '../output/', warning = FALSE, message = FALSE)
+```
+
+# Intro
+Today in lab we are create a table using KableExtra and our penguin data.
+
+# Load Libraries
+```{r}
+library(kableExtra)
+library(tidyverse)
+library(palmerpenguins)
+library(here)
+library(ymlthis)
+library(ggplot2)
+```
+
+# Load Data
+```{r}
+glimpse(penguins)
+```
+
+# make a plot
+```{r}
+ggplot(data = penguins, 
+       mapping = aes(x = bill_length_mm,
+                     y = bill_depth_mm,
+                     color = species)) +
+  geom_point(outlier.colour = NA)+ #add boxplot
+  labs(x= "Bill Length (mm)", #label your x-axis
+       y= "Bill Depth (mm)", #label your y-axis
+       title = "Difference Between Bill Length and Bill Depth", #adds your tittle
+       caption = "Source: Data Provided by the Palmer Station LTER / PalmerPenguins package")+ #add caption
+  theme_bw()+ #adds theme
+  facet_wrap(~species)+ #divides each species into different columns
+  theme(plot.title = element_text(size = 18), #change title size
+        axis.title = element_text(size = 12)) #change size of your axis title
+```
+# Creating a Table
+```{r}
+penguins %>% #data
+  group_by(species) %>% #selects our variables
+  summarise(billmean = mean(bill_length_mm, na.rm = TRUE)) %>% #calculates the mean of our bill length
+  kbl() %>%
+  kable_classic_2(html_font = "Baskerville") %>%
+  kable_styling(bootstrap_options = c("striped", "hover")) #makes table striped
+```
+
+
