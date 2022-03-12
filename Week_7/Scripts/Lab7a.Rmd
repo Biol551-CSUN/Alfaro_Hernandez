@@ -50,7 +50,6 @@ county <- map_data("county")%>%
 ```
 
 ˆ
-
 ```{r}
 ggplot() +
   geom_polygon(data = county, aes(x =long, 
@@ -60,14 +59,5 @@ ggplot() +
                fill= "transparent") +
   geom_point(data= Sftree, aes(x= longitude, 
                                y= latitude,
-                               color = species)) +
-  guides(color=FALSE) +
-  labs(x= "Longitude", y= "Latitude", title = "Tree Species Scattered Throughout San Francisco",
-       subtitle = "Kwanzan Flowering Cherry") +
-    theme_light() +
-  theme(plot.title = element_text(hjust = 0.5),
-         plot.subtitle=element_text(hjust=0.5))
+                               color = species))
 ```
-
-
-
