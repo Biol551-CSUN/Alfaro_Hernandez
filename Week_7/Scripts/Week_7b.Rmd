@@ -36,7 +36,6 @@ glimpse(ChemData)
 Oahu<-get_map("Oahu")
 ```
 
-
 ```{r}
 WP<-data.frame(lon = -157.7621, lat = 21.27427)
 
