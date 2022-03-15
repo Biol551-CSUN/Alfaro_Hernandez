@@ -9,7 +9,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, fig.path = '../Output/', warning = FALSE, message = FALSE)
 ```
 
 #Load libraries
@@ -28,36 +28,40 @@ sf_trees <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/t
 ```
 
 ```{r}
-#tuesdata <- tidytuesdayR::tt_load('2020-01-28')
-#tuesdata <- tidytuesdayR::tt_load(2020, week = 5)
+states <- map_data("state") %>%  # Selects states
+  filter(region == "california") # filters only California 
 ```
 
 ```{r}
-#sf_trees <- tuesdata$sf_trees
+county <- map_data("county") %>% ## selects county 
+  filter(region == "california") %>% # filter for California 
+  filter(subregion == "san francisco") # filters only San Francisco from map data 
 ```
 
 ```{r}
-states <- map_data("state") %>%
-  filter(region == "california")
-
-
+Sftree <- sf_trees %>% # rename the data 
+  select(tree_id, species, latitude, longitude) %>% # select specific columns from data 
+  filter(longitude <= '-125') %>% # Filter the longitude less than or equal to -125
+  filter(latitude >= '37.6') %>% # Filter the latitude greater than or equal to 37.6
+ # filter(tree_id >= 3000 & tree_id <= 5000) 
+  filter(species == "Pittosporum undulatum :: Victorian Box") # Filters specific tree species
 ```
 
-```{r}
-county <- map_data("county")%>%
-  filter(region == "california") %>%
-  filter(subregion == "san francisco")
-```
-
-ˆ
 ```{r}
 ggplot() +
-  geom_polygon(data = county, aes(x =long, 
+  geom_polygon(data = county, aes(x =long, # create a map 
                                   y= lat, 
-                                  group= group),
-               color = "black",
-               fill= "transparent") +
+                                  group= group), # group = group always required to connect points 
+               color = "black", # black outlines 
+               fill= "white") +  
   geom_point(data= Sftree, aes(x= longitude, 
                                y= latitude,
-                               color = species))
+                               color = "species")) + # create points by filtered species 
+  guides(color= FALSE) + # remove guides on side 
+  labs(x= "Longitude", y= "Latitude", 
+       title = "Pittosporum undulatum in San Francisco") # gives name to our title
+  theme_light() +
+  theme(plot.title = element_text(hjust = 0.5), ## centers the  title 
+        plot.subtitle=element_text(hjust=0.5)) 
 ```
+
