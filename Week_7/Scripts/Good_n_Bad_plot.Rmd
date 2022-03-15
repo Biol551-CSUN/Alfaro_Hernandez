@@ -1,0 +1,86 @@
+---
+title: "God and Bad Plot"
+author: "Margarita Alfaro"
+date: "3/12/2022"
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+    theme: simplex
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.path = '../Output/', warning = FALSE, message = FALSE)
+```
+
+### Introduction ###
+This assignment is about the creation of two different version of a plot, a bad and a good plot was created based on the tidy tuesday Chocolate Bar Ratings Data from 2022-01-18.
+
+### Load Libraries ###
+```{r}
+library(here)
+library(tidyverse)
+library(ggplot2)
+library(beyonce)
+library(dplyr)
+```
+
+### Load Data ###
+```{r}
+chocolate <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2022/2022-01-18/chocolate.csv')
+```
+
+### Bad Plot ###
+#### filtering out the data 
+```{r}
+chocodata<-chocolate %>% # rename our new data
+  select(company_location, cocoa_percent) %>% #select specific columns from the data
+   filter(company_location == "U.S.A." | company_location == "France" | company_location == "U.K." | company_location == "Spain" | company_location == "Italy" | company_location == "Mexico" | company_location == "El Salvador") # filters specific country form the data set
+```
+
+#### plottling the data
+```{r}
+chocodata %>%
+  ggplot(aes(x= company_location, y = cocoa_percent))+
+  geom_jitter(color = "yellow") +
+  labs(x= "Location", y = "Percent") # label the x and y-axis
+```
+
+### Comments for the bad plot ###
+
+* ##### The numbers for the percents (%) are to many that is hard to observed the specific values for the percent.
+* ##### The color yellow makes the plot difficult to read it.
+* ##### The dots cannot be seen clearly.
+* ##### It doesn't have a title.
+* ##### The plot doesn't say what is about and even y- axis for the percent it doesn't say what is the percent about it.
+
+
+### Good Plot ###
+#### filtering our data
+```{r}
+chocodata<-chocolate %>% # rename our new data
+  select(company_location, cocoa_percent) %>% #select specific columns from the data
+  filter(company_location == "U.S.A." | company_location == "France" | company_location == "U.K." | company_location == "Spain" | company_location == "Italy" | company_location == "Mexico" | company_location == "El Salvador") %>% # filters specific country form the data set
+  filter(cocoa_percent == "60%" | cocoa_percent == "65%" | cocoa_percent == "70%" | cocoa_percent == "75%" | cocoa_percent == "80%" | cocoa_percent == "85%" | cocoa_percent == "90%" | cocoa_percent == "95%") # filter specific cocoa percent from our data set
+```
+
+#### plottling the data
+```{r}
+chocodata %>%
+  ggplot(aes(x = company_location, y = cocoa_percent))+
+  geom_count(color = "brown") +
+labs(x= "Company Location", y = "Cocoa Percent", # label the x and y-axis
+     title = "Chocolate", # adds name to our title
+     subtitle = "Manufacturers with different cocoa percentages according with their location",
+     caption = "Source: 2022-01-18 TidyTuesday data Provided by flavor of cacao") #adds a caption from where our data was obtained
+```
+
+### Comments for the good plot ###
+
+* ##### It has a title.
+* ##### The dots can be seen clearly.
+* ##### The percents were filtered and now is more easy to read.
+* ##### The y-axis for the percent states that is about cocoa percent.
+* ##### The plot has a source from where the data was obtained.
+
+
