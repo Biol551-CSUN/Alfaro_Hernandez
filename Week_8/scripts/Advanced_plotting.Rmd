@@ -1,0 +1,139 @@
+---
+title: "Advance Plotting"
+author: "Margarita Alfaro"
+date: "3/15/2022"
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.path = '.../output', warning = FALSE, message = FALSE)
+```
+
+### New Package ###
+* **install.packages("patchwork")** # for bringing plots together
+* **install.packages("ggrepel")** # for repelling labels
+* **install.packages("gganimate")** # animations
+* **install.packages("magick")** # for images
+
+### Load Data ###
+```{r}
+library(tidyverse)
+library(here)
+library(patchwork)
+library(ggrepel)
+library(gganimate)
+library(magick)
+library(palmerpenguins)
+```
+
+### Patchwork ###
+### plot 1
+```{r}
+p1<-penguins %>%
+  ggplot(aes(x = body_mass_g,
+             y = bill_length_mm, 
+             color = species))+
+  geom_point()
+p1
+```
+
+### ggrepel ###
+### Plot 2
+```{r}
+p2<-penguins %>%
+  ggplot(aes(x = sex, 
+             y = body_mass_g, 
+             color = species))+
+  geom_jitter(width = 0.2)
+p2
+
+```
+
+```{r}
+p1+p2 +
+  plot_layout(guides = 'collect')+
+  plot_annotation(tag_levels = 'A')
+p1/p2 +
+  plot_layout(guides = 'collect')+
+  plot_annotation(tag_levels = 'A')
+```
+
+```{r}
+view(mtcars)
+
+ggplot(mtcars, aes(x = wt, 
+                   y = mpg, 
+                   label = rownames(mtcars))) +
+  geom_text() + # creates a text label
+  geom_point(color = 'red')
+```
+
+```{r}
+ggplot(mtcars, aes(x = wt, 
+                   y = mpg, 
+                   label = rownames(mtcars))) +
+  geom_text_repel() + # repel them &  add lines to the points where the label belong
+  geom_point(color = 'red')
+```
+
+```{r}
+ggplot(mtcars, aes(x = wt, 
+                   y = mpg, 
+                   label = rownames(mtcars))) +
+  geom_label_repel() + # repel them & adds a box around the labels
+  geom_point(color = 'red')
+```
+
+### gganimate ###
+```{r}
+penguins %>%
+ggplot(aes(x = body_mass_g, 
+            y = bill_depth_mm, 
+            color = species)) +
+  geom_point() +
+  transition_states(
+     year, # what are we animating by
+     transition_length = 2, #The relative length of the transition.
+     state_length = 1)+ # The length of the pause between transitions
+  ease_aes("bounce-in-out") +
+  ggtitle('Year: {closest_state}') # adds and keeps moving years in the animation
+  anim_save(here("Week_8","output","mypengiungif.gif"))
+```
+
+### magick ###
+```{r}
+penguin<-image_read("https://pngimg.com/uploads/penguin/pinguin_PNG9.png")
+penguin
+```
+```{r}
+penguins %>%
+ggplot(aes(x = body_mass_g, 
+            y = bill_depth_mm, 
+            color = species)) +
+  geom_point()
+ggsave(here("Week_8","output","penguinplot.png")) #don't forget to save image so he next code can run
+```
+
+```{r}
+penplot<-image_read(here("Week_8","output","penguinplot.png"))
+out <- image_composite(penplot, penguin, offset = "+70+30")
+out
+```
+
+```{r}
+# Read in a penguin gif
+pengif<-image_read("https://media3.giphy.com/media/H4uE6w9G1uK4M/giphy.gif")
+outgif <- image_composite(penplot, pengif, gravity = "center") #can be center, right, bottom, etc
+animation <- image_animate(outgif, fps = 10, optimize = TRUE)
+animation
+```
+### Awesome R Package of the Day ###
+```{r}
+library(sourrr)
+build_recipe(final_weight = 900, hydration = 0.75)
+```
+
+
