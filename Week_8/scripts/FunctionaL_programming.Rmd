@@ -1,0 +1,203 @@
+---
+title: "Functional Programming"
+author: "Margarita Alfaro"
+date: "3/17/2022"
+output: 
+  html_document:
+    toc: TRUE
+    toc_float: TRUE
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, fig.path = '../output', warning = FALSE, message = FALSE)
+```
+
+### Introduction ###
+Creating a function to avoid make mistakes and easy access
+
+### Load Libraries ###
+```{r}
+library(tidyverse)
+```
+
+### Data frame from Random numbers ###
+```{r}
+df <- tibble::tibble(a = rnorm(10), # draws 10 random values from a normal distribution
+  b = rnorm(10),
+  c = rnorm(10),
+  d = rnorm(10))
+
+head(df)
+```
+
+#### Copy and Paste also create mistakes
+```{r}
+df<-df %>%
+  mutate(a = (a-min(a, na.rm = TRUE))/(max(a, na.rm= TRUE)-min(a, na.rm = TRUE)))
+
+df<-df %>%
+  mutate(a = (a-min(a, na.rm = TRUE))/(max(a, na.rm = TRUE)-min(a, na.rm = TRUE)),
+         b = (b-min(b, na.rm = TRUE))/(max(b, na.rm = TRUE)-min(b, na.rm = TRUE)),
+         c = (c-min(c, na.rm = TRUE))/(max(c, na.rm = TRUE)-min(c, na.rm = TRUE)),
+         d = (d-min(d, na.rm = TRUE))/(max(d, na.rm = TRUE)-min(d, na.rm = TRUE)))
+```
+
+
+#### Funtion was named rescale01 and now can be mutate
+```{r}
+rescale01 <- function(x) {
+  value<-(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))
+  return(value)}
+df %>%
+  mutate(a = rescale01(a),
+         b = rescale01(b),
+         c = rescale01(c),
+         d = rescale01(d))
+```
+#### Example set up of a blank data as a result
+```{r}
+rescale01 <- function(x) {
+  value<-(x-min(x, na.rm = TRUE))/(max(x, na.rm = TRUE)-min(x, na.rm = TRUE))
+  return(value)
+}
+```
+
+
+#### Fahrenheit to Celcius function created
+```{r}
+FtoC<-function()
+  
+FtoC<-function() {temp_C<-(temp_F-32)*5/9}
+
+FtoC <- function(temp_F) {temp_C <- (temp_F - 32) * 5 / 9} 
+
+FtoC <- function(temp_F) { 
+  temp_C <- (temp_F - 32) * 5 / 9 
+  return(temp_C)}
+```
+
+```{r}
+FtoC(32)
+```
+
+
+```{r}
+CtoK<-function()
+  
+CtoK<-function() {temp_K<-(temp_C+273.15)}
+
+CtoK <- function(temp_C) {temp_K <- (temp_C +273.15)} 
+
+CtoK <- function(temp_C) { 
+  temp_K <- (temp_C+273.15)
+  return(temp_K)}
+```
+
+```{r}
+CtoK(47)
+```
+
+
+```{r, eval=FALSE}
+
+install.packages("PNWColors")
+```
+
+```{r}
+library(palmerpenguins)
+library(PNWColors) # for the PNW color palette 
+```
+
+
+```{r}
+pal<-pnw_palette("Lake",3, type = "discrete") # my color palette 
+ggplot(penguins, aes(x = body_mass_g, y = bill_length_mm, color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ # add a linear model
+  scale_color_manual("Island", values=pal)+   # use pretty colors and change the legend title
+  theme_bw()
+```
+
+```{r}
+myplot<-function(){
+pal<-pnw_palette("Lake",3, type = "discrete") # my color palette 
+ggplot(penguins, aes(x = body_mass_g, y = bill_length_mm, color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ # add a linear model
+  scale_color_manual("Island", values=pal)+   # use pretty colors and change the legend title
+  theme_bw()}
+```
+
+```{r}
+myplot<-function(data, x, y){
+pal<-pnw_palette("Lake",3, type = "discrete") # my color palette 
+ggplot(data, aes(x = x, y =y , color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ # add a linear model
+  scale_color_manual("Island", values=pal)+   # use pretty colors and change the legend title
+  theme_bw()}
+```
+
+```{r}
+myplot(x = body_mass_g, y = flipper_length_mm)
+```
+
+```{r}
+myplot(x = body_mass_g, y = flipper_length_mm)
+```
+
+
+```{r}
+myplot(x = body_mass_g, y = flipper_length_mm)+
+  labs(x = "Body mass (g)",
+       y = "Flipper length (mm)")
+```
+
+```{r}
+a<-4
+b<-5
+```
+
+```{r}
+if (a > b) { # my question
+  f <- 20 # if it is true give me answer 1
+    } else { # else give me answer 2
+  f <- 10}
+```
+
+```{r}
+f
+```
+
+```{r}
+myplot<-function(data = penguins, x, y ,lines=TRUE ){ # add new argument for lines
+pal<-pnw_palette("Lake",3, type = "discrete")# my color palette 
+if(lines==TRUE){
+  ggplot(data, aes(x = {{x}}, y = {{y}} , color = island))+
+  geom_point()+
+  geom_smooth(method = "lm")+ # add a linear model
+  scale_color_manual("Island", values=pal)+   # use pretty colors and change the legend title
+  theme_bw()}
+else{
+ggplot(data, aes(x = {{x}}, y = {{y}} , color = island))+
+  geom_point()+
+  scale_color_manual("Island", values=pal)+   # use pretty colors and change the legend title
+  theme_bw()}}
+```
+
+####
+```{r}
+myplot(x = body_mass_g, y = flipper_length_mm)
+```
+
+```{r}
+myplot(x = body_mass_g, y = flipper_length_mm, lines = FALSE)
+```
+
+
+#### R Package of the Day
+```{r}
+
+```
+
+
