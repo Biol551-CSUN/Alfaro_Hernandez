@@ -1,0 +1,83 @@
+---
+title: "Week 12b Lab Work"
+author: "Margarita Alfaro"
+date: "4/26/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction
+
+Today's lab is working with intertidal data and creating factors.
+
+# Load libraries
+```{r}
+library(tidyverse)
+library(here)
+library(dplyr)
+library(janitor)
+```
+
+# Loading data
+```{r}
+Cl_data <- read_csv(here("week_12/data", "intertidaldata.csv"))
+Cl1_data <- read_csv(here("week_12/data","intertidaldata_latitude.csv"))
+glimpse(Cl_data)
+glimpse(Cl1_data)
+```
+
+
+# cleaning of data
+```{r}
+clean_data <- Cl_data %>%
+  clean_names() %>% #create names for the function
+  remove_constant() #removes constants from the data
+clean1_data <- Cl1_data %>%
+  clean_names() #creates names for function
+```
+
+## Joining data frames
+
+```{r}
+tide <- left_join(clean_data, clean1_data) #combines 2 data frames by site
+```
+
+## More cleaning
+```{r}
+tide$quadrat <- tide$quadrat %>% #cleans data frame without removing columns & doesn't create output
+  str_remove_all(c("([0-9])" = "", "(\\.)" = "")) %>% #removes extra values in quadrat column
+  str_trim() #removes white spaces
+glimpse(tide)
+```
+
+# Plot
+```{r, fig.align='center'}
+tide %>%
+  mutate(quadrat = factor(quadrat, 
+                          levels = c("Low", "Mid", "High"))) %>% #creates quadrat levels
+  group_by(site, quadrat) %>% #groups data
+  summarise(algae_number = sum(algae)) %>% #calculates sum of algaes
+  ggplot(aes(x = quadrat, 
+             y = algae_number, 
+             fill = quadrat))+ #fills each bars in the quadrant with low, mid, high
+  geom_bar(stat = "identity")+
+  facet_wrap( ~site, #creates site sections
+             scale = "free")+ 
+  labs(x = "Tide Levels", #label x-axis
+       y = "Amount of Algae", #label y-axis
+       title = "Different Sites and Tide Levels Observed in Algae")+ #adds a tittle
+  theme_minimal()+
+  theme(axis.title = element_text(size = 15), #changes the size of the axis
+        plot.title = element_text(size = 20), #changes the size of the title
+        legend.position = "none", #removes legend
+        panel.background = element_rect(fill = 'white'), #adds color inside of each section
+        plot.background = element_rect(fill = "gray95"))+ #adds color to the chart
+  scale_fill_manual(values = c("darkslategray4", "darkseagreen4", "salmon4")) #adds color to fill each bar
+ggsave(here("week_12/output","algae_plot.png"), height = 6, width = 7)
+```
+
+
+
