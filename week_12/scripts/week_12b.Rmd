@@ -1,5 +1,5 @@
 ---
-title: "Untitled"
+title: "Workin with Factors"
 author: "Margarita Alfaro"
 date: "4/21/2022"
 output: html_document
@@ -161,3 +161,15 @@ starwars_clean<-starwars %>%
   mutate(species = fct_recode(species, "Humanoid" = "Human"))
 starwars_clean
 ```
+
+#awesome R package
+
+```{r}
+library(gm)
+m <- 
+  Music() +  # initialize a Music object
+  Meter(4, 4) + # add a 4/4 time signature
+  Line(list("C5", "D5", "E5", "F5"), list(1, 1, 1, 1)) # add a musical line of four quarter notes
+```
+
+
