@@ -1,0 +1,144 @@
+---
+title: "Intro Models"
+author: "Margarita Alfaro"
+date: "4/28/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Installing Packages ###
+```{r}
+#install.packages('modelsummary')
+install.packages('tidymodels')
+install.packages('broom')
+install.packages('flextable')
+install.packages('peformance')
+```
+
+### Load Libraries ###
+```{r}
+library(tidyverse)
+library(here)
+library(palmerpenguins)
+library(broom)
+library(performance) 
+library(modelsummary)
+library(tidymodels)
+library(see)
+```
+
+```{r}
+# Linear model of Bill depth ~ Bill length by species
+Peng_mod<-lm(bill_length_mm ~ bill_depth_mm*species, data = penguins)
+```
+
+```{r}
+check_model(Peng_mod) # check assumptions of an lm model
+```
+
+
+```{r}
+check_model(Peng_mod) # check assumptions of an lm model
+```
+
+```{r}
+anova(Peng_mod)
+```
+
+```{r}
+summary(Peng_mod)
+```
+
+```{r}
+# Tidy coefficients
+coeffs<-tidy(Peng_mod) # just put tidy() around it
+coeffs
+```
+
+```{r}
+# tidy r2, etc
+results<-glance(Peng_mod) 
+results
+```
+```{r}
+# tidy residuals, etc
+resid_fitted<-augment(Peng_mod)
+resid_fitted
+```
+
+```{r}
+# New model
+Peng_mod_noX<-lm(bill_length_mm ~ bill_depth_mm, data = penguins)
+#Make a list of models and name them
+models<-list("Model with interaction" = Peng_mod,
+             "Model with no interaction" = Peng_mod_noX)
+#Save the results as a .docx
+modelsummary(models, output = here("Week_13","output","table.docx"))
+```
+
+### ModelPlot
+```{r}
+library(wesanderson)
+modelplot(models) +
+    labs(x = 'Coefficients', 
+         y = 'Term names') +
+    scale_color_manual(values = wes_palette('Darjeeling1'))
+```
+
+```{r}
+ models<- penguins %>%
+  ungroup()%>% # the penguin data are grouped so we need to ungroup them
+    nest(-species) %>% # nest all the data by species
+  mutate(fit = map(data, ~lm(bill_length_mm~body_mass_g, data = .))) #mutate our data column
+
+models
+```
+
+```{r}
+models$fit # shows you each of the 3 models
+```
+#allow me to copy and paste eah difernete time
+```{r}
+results<-models %>%
+   mutate(coeffs = map(fit, tidy), # look at the coefficients
+          modelresults = map(fit, glance)) %>%  # R2 and others
+  select(species, coeffs, modelresults) %>% # only keep the results
+   unnest() # put it back in a dataframe and specify which columns to unnest
+results
+```
+
+```{r}
+view(results) # view the results
+```
+
+#Tidymodels
+```{r}
+linear_reg()
+```
+
+```{r}
+lm_mod<-linear_reg() %>%
+  set_engine("lm") %>%
+  fit(bill_length_mm ~ bill_depth_mm*species, data = penguins) %>%
+  tidy() %>%
+  ggplot()+
+    geom_point(aes(x = term, y = estimate))+
+    geom_errorbar(aes(x = term, ymin = estimate-std.error,
+                      ymax = estimate+std.error), width = 0.1 )+
+  coord_flip()
+
+lm_mod
+```
+
+
+#Awesome R Package
+```{r}
+install.packages("pushoverr")
+library(pushoverr)
+pushover("Nyssa - your code is done.")
+```
+
+
