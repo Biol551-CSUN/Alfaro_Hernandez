@@ -1,0 +1,75 @@
+---
+title: "Lab_13"
+author: "Margarita Alfaro"
+date: "4/26/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Instructions
+Your goal is to bring in all 4 files and calculate the mean and standard deviation of both temperature (Temp.C) and light (Intensity.lux) for each tide pool. 
+
+# Load Libraries
+```{r}
+library(tidyverse)
+library(here)
+```
+
+# Data
+```{r}
+hw_data <- here("week_13","data","homework") #folder location
+hw_files <- dir(path = hw_data, pattern = ".csv") #Looks for .csv files
+hw_files
+```
+
+# preallocating space for the loop
+```{r}
+homework <- data.frame(matrix(nrow = length(hw_files), ncol = 5)) #Creates 5 new columns for each file
+colnames(homework) <- c("filename","mean_temp","mean_light","sd_temp","sd_light") # give name to columns
+homework
+```
+# testing the loop
+```{r}
+base_data <- read_csv(paste0(hw_data,"/",hw_files[1]))
+head(base_data)
+```
+
+# adds mean and sd
+```{r}
+for(i in 1:length(hw_files)){
+  base_data <- read_csv(paste0(hw_data, "/", hw_files[i]))
+  homework$filename[i] <- hw_files[i] #adds names to the file
+  homework$mean_temp[i] <- mean(base_data$Temp.C, na.rm = TRUE) #adds the value for mean in temperature
+  homework$mean_light[i] <- mean(base_data$Intensity.lux, na.rm = TRUE) #adds mean intensity
+  homework$sd_temp[i] <- sd(base_data$Temp.C, na.rm = TRUE) #adds sd of temperature
+  homework$sd_light[i] <- sd(base_data$Intensity.lux, na.rm = TRUE) #adds sd of intensity
+}
+```
+
+
+# Data for in Map function
+```{r}
+hw_map <- dir(path = hw_data, pattern = ".csv", full.names = TRUE) #brings the files from above
+hw_map
+```
+# Creating a map function
+```{r}
+another_map <- hw_map %>% #creates a data map
+  set_names() %>% #give names to each id to a corresponding file
+  map_df(read_csv, .id = "filename") %>% #maps the data frame
+  group_by(filename) %>% #groups by file name
+  summarise(mean_temp = mean(Temp.C, na.rm = TRUE), #calculate mean for the temperature
+            mean_light = mean(Intensity.lux, na.rm = TRUE), #calculate the mean of the intensity
+            sd_temp = sd(Temp.C, na.rm = TRUE), #calculate sd of temperature
+            sd_light = sd(Intensity.lux, na.rm = TRUE)) #calculate sd for the intensity
+another_map
+```
+
+
+
+
+
+
